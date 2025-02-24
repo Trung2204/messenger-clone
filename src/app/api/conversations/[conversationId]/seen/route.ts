@@ -6,7 +6,8 @@ interface IParams {
   conversationId: string;
 }
 
-export async function POST(request: Request, { params }: { params: IParams }) {
+export async function POST(request: Request, props: { params: Promise<IParams> }) {
+  const params = await props.params;
   try {
     const currentUser = await getCurrentUser();
     const { conversationId } = params;

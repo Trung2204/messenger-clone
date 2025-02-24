@@ -12,7 +12,7 @@ export async function POST(request: Request) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
-    const updatedUser = prisma.user.update({
+    const updatedUser = await prisma.user.update({
       where: {
         id: currentUser.id,
       },

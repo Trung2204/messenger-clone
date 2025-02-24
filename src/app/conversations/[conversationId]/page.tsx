@@ -9,7 +9,8 @@ interface IParams {
   conversationId: string;
 }
 
-const ConversationId = async ({ params }: { params: IParams }) => {
+const ConversationId = async (props: { params: Promise<IParams> }) => {
+  const params = await props.params;
   const conversation = await getConversationById(params.conversationId);
   const messages = await getMessages(params.conversationId);
 

@@ -118,6 +118,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
               Save
             </Button>
           </div>
+          
         </div>
       </form>
     </Modal>

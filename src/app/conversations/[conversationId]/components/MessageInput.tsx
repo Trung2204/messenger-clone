@@ -18,6 +18,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
   type,
   required,
   register,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   errors,
 }) => {
   return (

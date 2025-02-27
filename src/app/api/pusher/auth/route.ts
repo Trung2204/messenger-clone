@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { pusherServer } from "@/app/libs/pusher";
-import { getSession } from "next-auth/react";
+import getSession from "@/app/actions/getSession";
 
 export async function POST(request: NextRequest) {
   const session = await getSession();

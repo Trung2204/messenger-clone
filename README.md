@@ -1,8 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Messenger Clone
+
+This is a [Next.js](https://nextjs.org) project that clones the functionality of a real-time chat application similar to Messenger. It uses various modern web technologies to provide a seamless chat experience.
+
+## Features
+
+- User authentication with NextAuth
+- Real-time messaging with Pusher
+- Group chat functionality
+- User presence indication
+- Profile management
+- Responsive design
 
 ## Getting Started
 
-First, run the development server:
+First, clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/Trung2204/messenger-clone.git
+cd messenger-clone
+npm install
+```
+
+Next, set up the environment variables. Create a `.env` file in the root directory and add the following variables:
+
+```env
+DATABASE_URL=your-database-url
+NEXTAUTH_SECRET=your-nextauth-secret
+GITHUB_ID=your-github-client-id
+GITHUB_SECRET=your-github-client-secret
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+PUSHER_APP_ID=your-pusher-app-id
+NEXT_PUBLIC_PUSHER_APP_KEY=your-pusher-app-key
+PUSHER_SECRET=your-pusher-secret
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -16,18 +49,28 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Prisma Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Generate the Prisma client:
+
+```bash
+npx prisma generate
+```
+
+Run the Prisma migrations:
+
+```bash
+npx prisma migrate dev
+```
 
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Prisma Documentation](https://www.prisma.io/docs) - learn about Prisma ORM.
+- [NextAuth Documentation](https://next-auth.js.org/getting-started/introduction) - learn about authentication in Next.js.
+- [Pusher Documentation](https://pusher.com/docs) - learn about real-time communication.
 
 ## Deploy on Vercel
 
